@@ -1,0 +1,1447 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>视频在线观看 - 官方视频品牌门户_高清正版内容生态</title>
+<meta name="description" content="视频在线观看官方网站，专注于为创作者与观众提供高清、正版、原创的视频内容社区，涵盖科技、生活、文化等多领域精品视频与企业级内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111a2b'/%3E%3Cpath d='M24 20l22 12-22 12z' fill='%2356e0c8'/%3E%3C/svg%3E">
+<style>
+:root{
+  --vow-bg:#0d1220;
+  --vow-panel:#151d30;
+  --vow-panel2:#1b2540;
+  --vow-line:#27334f;
+  --vow-text:#e8edf7;
+  --vow-muted:#93a1bd;
+  --vow-accent:#56e0c8;
+  --vow-accent2:#7c8cff;
+  --vow-warm:#ffb45c;
+  --vow-radius:16px;
+  --vow-sticky:112px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+  background:var(--vow-bg);
+  color:var(--vow-text);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.vow-skip{position:absolute;left:-9999px;top:0;background:var(--vow-accent);color:#08111d;padding:10px 18px;border-radius:0 0 10px 0;z-index:999}
+.vow-skip:focus{left:0}
+.vow-wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+.vow-sticky{position:sticky;top:0;z-index:200}
+.vow-anchor{scroll-margin-top:calc(var(--vow-sticky) + 12px)}
+
+/* 公告条 */
+.vow-notice{
+  background:linear-gradient(90deg,#1f2a46,#132038 60%,#1c2b4a);
+  border-bottom:1px solid var(--vow-line);
+  font-size:13.5px;
+  color:var(--vow-muted);
+}
+.vow-notice .vow-wrap{display:flex;align-items:center;gap:14px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap}
+.vow-notice-tag{
+  flex:none;background:var(--vow-accent);color:#07131f;font-weight:700;
+  font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;
+}
+.vow-notice-list{display:flex;gap:22px;flex-wrap:wrap;flex:1;min-width:0}
+.vow-notice-item{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.vow-notice-item b{color:var(--vow-text);font-weight:600}
+.vow-notice-item span{color:var(--vow-accent2)}
+.vow-notice-item em{font-style:normal;color:var(--vow-accent);font-size:12px;margin-left:6px}
+
+/* 页头 */
+.vow-header{
+  background:rgba(13,18,32,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--vow-line);
+}
+.vow-header-inner{display:flex;align-items:center;gap:20px;padding:12px 22px;max-width:1200px;margin:0 auto}
+.vow-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px;flex:none}
+.vow-logo-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(140deg,var(--vow-accent),var(--vow-accent2));
+  display:grid;place-items:center;flex:none;
+}
+.vow-logo-mark svg{width:18px;height:18px}
+.vow-logo small{display:block;font-size:10.5px;font-weight:500;color:var(--vow-muted);letter-spacing:2px}
+.vow-nav{display:flex;gap:4px;margin-left:10px;flex:1;flex-wrap:wrap}
+.vow-nav a{
+  padding:7px 12px;border-radius:9px;font-size:14.5px;color:var(--vow-muted);
+  transition:color .2s,background .2s;white-space:nowrap;
+}
+.vow-nav a:hover,.vow-nav a:focus-visible{color:var(--vow-text);background:var(--vow-panel2)}
+.vow-search{position:relative;flex:none;width:230px}
+.vow-search input{
+  width:100%;background:var(--vow-panel);border:1px solid var(--vow-line);
+  color:var(--vow-text);border-radius:11px;padding:9px 38px 9px 13px;font-size:14px;
+  font-family:inherit;outline:none;transition:border-color .2s;
+}
+.vow-search input:focus{border-color:var(--vow-accent)}
+.vow-search button{
+  position:absolute;right:4px;top:50%;transform:translateY(-50%);
+  background:transparent;border:none;cursor:pointer;padding:6px;color:var(--vow-muted);
+  display:grid;place-items:center;border-radius:8px;
+}
+.vow-search button:hover{color:var(--vow-accent)}
+.vow-search-hint{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--vow-panel2);
+  border:1px solid var(--vow-line);border-radius:12px;padding:10px 12px;font-size:13px;
+  color:var(--vow-muted);display:none;box-shadow:0 16px 40px rgba(0,0,0,.45);
+}
+.vow-search-hint.vow-open{display:block}
+.vow-search-hint b{color:var(--vow-accent)}
+.vow-burger{
+  display:none;background:var(--vow-panel);border:1px solid var(--vow-line);
+  border-radius:10px;padding:8px;cursor:pointer;color:var(--vow-text);flex:none;
+}
+.vow-mobile-nav{display:none;border-top:1px solid var(--vow-line);background:var(--vow-panel)}
+.vow-mobile-nav.vow-open{display:block}
+.vow-mobile-nav a{display:block;padding:12px 22px;border-bottom:1px solid var(--vow-line);font-size:15px;color:var(--vow-muted)}
+.vow-mobile-nav a:last-child{border-bottom:none}
+
+/* 首屏 */
+.vow-hero{position:relative;overflow:hidden;padding:56px 0 64px;background:
+  radial-gradient(900px 420px at 82% -10%,rgba(124,140,255,.20),transparent 62%),
+  radial-gradient(700px 380px at 8% 10%,rgba(86,224,200,.13),transparent 60%),
+  var(--vow-bg);}
+.vow-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}
+.vow-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.5px;
+  color:var(--vow-accent);border:1px solid rgba(86,224,200,.32);border-radius:20px;
+  padding:4px 13px;margin-bottom:20px;background:rgba(86,224,200,.06);
+}
+.vow-eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--vow-accent);display:block;animation:vowPulse 2s infinite}
+@keyframes vowPulse{0%,100%{opacity:1}50%{opacity:.35}}
+.vow-hero h1{
+  font-size:clamp(36px,5vw,56px);line-height:1.16;letter-spacing:-.5px;font-weight:800;
+  margin-bottom:20px;
+}
+.vow-hero h1 span{
+  background:linear-gradient(100deg,var(--vow-accent),var(--vow-accent2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.vow-hero-lead{font-size:16.5px;color:var(--vow-muted);margin-bottom:18px;max-width:560px}
+.vow-hero-desc{font-size:14.5px;color:#b6c2d8;line-height:1.85;margin-bottom:26px;max-width:580px}
+.vow-hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:30px}
+.vow-btn{
+  display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:12px;
+  font-size:15px;font-weight:600;cursor:pointer;border:1px solid transparent;
+  font-family:inherit;transition:transform .18s,box-shadow .18s,background .18s;
+}
+.vow-btn:hover{transform:translateY(-2px)}
+.vow-btn-primary{background:linear-gradient(120deg,var(--vow-accent),#4bc4e8);color:#06121d;box-shadow:0 10px 26px rgba(86,224,200,.22)}
+.vow-btn-ghost{background:var(--vow-panel);border-color:var(--vow-line);color:var(--vow-text)}
+.vow-btn-ghost:hover{background:var(--vow-panel2)}
+.vow-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:530px}
+.vow-stat{background:var(--vow-panel);border:1px solid var(--vow-line);border-radius:13px;padding:14px 16px}
+.vow-stat b{display:block;font-size:23px;font-weight:800;color:var(--vow-accent);letter-spacing:-.5px}
+.vow-stat b em{font-style:normal;font-size:14px;font-weight:600;margin-left:2px;color:var(--vow-accent2)}
+.vow-stat span{font-size:12.5px;color:var(--vow-muted)}
+
+.vow-hero-visual{position:relative}
+.vow-hero-figure{
+  position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--vow-line);
+  box-shadow:0 30px 70px rgba(0,0,0,.5);background:var(--vow-panel);
+}
+.vow-hero-figure img{aspect-ratio:16/11;width:100%;object-fit:cover}
+.vow-hero-figure figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:34px 20px 16px;
+  background:linear-gradient(transparent,rgba(7,11,20,.92));
+  font-size:13px;color:#cfd9ec;display:flex;align-items:center;gap:10px;
+}
+.vow-hero-figure figcaption b{color:var(--vow-accent)}
+.vow-hero-badge{
+  position:absolute;top:14px;left:14px;background:rgba(8,13,24,.82);
+  border:1px solid rgba(86,224,200,.4);color:var(--vow-accent);
+  font-size:12px;padding:4px 11px;border-radius:20px;letter-spacing:.8px;
+  backdrop-filter:blur(6px);
+}
+.vow-hero-float{
+  position:absolute;right:-8px;bottom:-24px;background:var(--vow-panel2);
+  border:1px solid var(--vow-line);border-radius:15px;padding:12px 16px;
+  box-shadow:0 18px 40px rgba(0,0,0,.5);font-size:12.5px;color:var(--vow-muted);
+  max-width:250px;
+}
+.vow-hero-float b{display:block;color:var(--vow-text);font-size:13.5px;margin-bottom:2px}
+
+/* 通用 section */
+.vow-section{padding:64px 0}
+.vow-section-head{margin-bottom:34px;max-width:780px}
+.vow-section-head .vow-kicker{
+  font-size:12.5px;letter-spacing:2px;color:var(--vow-accent2);
+  text-transform:uppercase;font-weight:600;display:block;margin-bottom:10px;
+}
+.vow-section-head h2{font-size:clamp(25px,3.2vw,33px);line-height:1.28;letter-spacing:-.3px;font-weight:800}
+.vow-section-head p{color:var(--vow-muted);font-size:15px;margin-top:12px}
+.vow-alt{background:linear-gradient(180deg,#101828,#0e1424)}
+
+/* 焦点内容 */
+.vow-focus-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;min-width:0}
+.vow-focus-main{
+  background:var(--vow-panel);border:1px solid var(--vow-line);border-radius:var(--vow-radius);
+  overflow:hidden;transition:border-color .2s,transform .2s;
+}
+.vow-focus-main:hover{border-color:rgba(86,224,200,.5);transform:translateY(-3px)}
+.vow-focus-main img{aspect-ratio:16/9;width:100%;object-fit:cover}
+.vow-focus-body{padding:20px 22px 22px}
+.vow-tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.vow-tag{
+  font-size:11.5px;padding:2px 10px;border-radius:20px;
+  background:rgba(124,140,255,.13);color:#b3bcff;border:1px solid rgba(124,140,255,.25);
+}
+.vow-tag.vow-tag-hot{background:rgba(255,180,92,.13);color:var(--vow-warm);border-color:rgba(255,180,92,.3)}
+.vow-focus-body h3{font-size:20.5px;line-height:1.4;margin-bottom:10px}
+.vow-focus-body p{color:var(--vow-muted);font-size:14px;margin-bottom:16px}
+.vow-meta{display:flex;align-items:center;gap:14px;font-size:12.5px;color:var(--vow-muted);flex-wrap:wrap}
+.vow-meta b{color:var(--vow-text);font-weight:600}
+.vow-actions{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+.vow-act{
+  display:inline-flex;align-items:center;gap:5px;background:var(--vow-panel2);
+  border:1px solid var(--vow-line);color:var(--vow-muted);border-radius:9px;
+  padding:5px 11px;font-size:12.5px;cursor:pointer;font-family:inherit;
+  transition:color .18s,border-color .18s,background .18s;
+}
+.vow-act:hover{color:var(--vow-text);border-color:var(--vow-accent)}
+.vow-act.vow-on{color:var(--vow-accent);border-color:var(--vow-accent);background:rgba(86,224,200,.1)}
+.vow-focus-side{display:flex;flex-direction:column;gap:16px;min-width:0}
+.vow-side-card{
+  background:var(--vow-panel);border:1px solid var(--vow-line);border-radius:13px;
+  padding:16px 18px;display:flex;gap:14px;align-items:flex-start;min-width:0;
+}
+.vow-side-thumb{
+  width:86px;height:60px;border-radius:9px;flex:none;overflow:hidden;
+  border:1px solid var(--vow-line);
+}
+.vow-side-thumb img{width:100%;height:100%;object-fit:cover}
+.vow-side-card h3{font-size:14.5px;line-height:1.45;margin-bottom:5px}
+.vow-side-card p{font-size:12.5px;color:var(--vow-muted);line-height:1.6}
+
+/* 视频条目列表 */
+.vow-videolist{display:flex;flex-direction:column;gap:0;border:1px solid var(--vow-line);border-radius:var(--vow-radius);overflow:hidden}
+.vow-videorow{
+  display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:16px;align-items:center;
+  padding:17px 20px;background:var(--vow-panel);border-bottom:1px solid var(--vow-line);
+  transition:background .18s;
+}
+.vow-videorow:last-child{border-bottom:none}
+.vow-videorow:hover{background:var(--vow-panel2)}
+.vow-videorow-idx{font-size:15px;font-weight:800;color:var(--vow-accent2);font-variant-numeric:tabular-nums}
+.vow-videorow-body h3{font-size:15.5px;line-height:1.45;margin-bottom:5px}
+.vow-videorow-body p{font-size:13px;color:var(--vow-muted);line-height:1.62;margin-bottom:7px}
+.vow-videorow-tags{display:flex;gap:7px;flex-wrap:wrap;font-size:11.5px;color:var(--vow-muted)}
+.vow-videorow-tags span{background:var(--vow-panel2);border:1px solid var(--vow-line);border-radius:6px;padding:1px 8px}
+.vow-videorow-data{display:flex;gap:13px;font-size:12px;color:var(--vow-muted);white-space:nowrap;flex-wrap:wrap;justify-content:flex-end}
+.vow-videorow-data span b{color:var(--vow-text);font-weight:600}
+
+/* 专题 */
+.vow-topics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.vow-topic{
+  background:var(--vow-panel);border:1px solid var(--vow-line);border-radius:var(--vow-radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s;
+}
+.vow-topic:hover{transform:translateY(-4px);border-color:rgba(124,140,255,.5)}
+.vow-topic img{aspect-ratio:16/9;width:100%;object-fit:cover}
+.vow-topic-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.vow-topic-status{font-size:11.5px;color:var(--vow-accent);margin-bottom:8px;letter-spacing:.5px}
+.vow-topic-body h3{font-size:16.5px;line-height:1.42;margin-bottom:8px}
+.vow-topic-body>p{font-size:13px;color:var(--vow-muted);margin-bottom:12px;line-height:1.65}
+.vow-topic-entries{list-style:none;display:flex;flex-direction:column;gap:6px;border-top:1px dashed var(--vow-line);padding-top:11px;margin-top:auto}
+.vow-topic-entries li{font-size:12.6px;color:#b6c2d8;padding-left:13px;position:relative;line-height:1.6}
+.vow-topic-entries li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--vow-accent2)}
+
+/* 解析长文 */
+.vow-deep{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:36px;align-items:start}
+.vow-deep article{min-width:0}
+.vow-deep article h3{font-size:18.5px;margin:26px 0 10px;color:var(--vow-text);line-height:1.45}
+.vow-deep article h3:first-child{margin-top:0}
+.vow-deep article p{font-size:14.6px;color:#b6c2d8;line-height:1.95;margin-bottom:12px}
+.vow-deep article strong{color:var(--vow-accent);font-weight:600}
+.vow-deep-figure{margin:20px 0;border-radius:13px;overflow:hidden;border:1px solid var(--vow-line)}
+.vow-deep-figure img{width:100%;aspect-ratio:16/8;object-fit:cover}
+.vow-deep-figure figcaption{font-size:12.5px;color:var(--vow-muted);padding:9px 14px;background:var(--vow-panel)}
+.vow-aside{
+  background:var(--vow-panel);border:1px solid var(--vow-line);border-radius:var(--vow-radius);
+  padding:20px;position:sticky;top:calc(var(--vow-sticky) + 18px);
+}
+.vow-aside h3{font-size:15px;margin-bottom:14px;color:var(--vow-accent)}
+.vow-aside-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.vow-aside-list li{font-size:13.2px;color:var(--vow-muted);line-height:1.65;padding-bottom:12px;border-bottom:1px dashed var(--vow-line)}
+.vow-aside-list li:last-child{border-bottom:none;padding-bottom:0}
+.vow-aside-list b{display:block;color:var(--vow-text);font-size:13.6px;font-weight:600;margin-bottom:3px}
+
+/* 作者矩阵 */
+.vow-authors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.vow-author{
+  display:flex;gap:16px;background:var(--vow-panel);border:1px solid var(--vow-line);
+  border-radius:var(--vow-radius);padding:18px;min-width:0;transition:border-color .2s;
+}
+.vow-author:hover{border-color:rgba(86,224,200,.45)}
+.vow-avatar{
+  width:56px;height:56px;border-radius:16px;flex:none;display:grid;place-items:center;
+  font-weight:800;font-size:21px;color:#08111d;letter-spacing:-1px;
+}
+.vow-author-body{min-width:0;flex:1}
+.vow-author-body h3{font-size:15.5px;margin-bottom:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.vow-author-body h3 em{font-style:normal;font-size:10.5px;font-weight:600;background:rgba(86,224,200,.12);color:var(--vow-accent);border:1px solid rgba(86,224,200,.3);padding:1px 7px;border-radius:10px}
+.vow-author-field{font-size:12.5px;color:var(--vow-accent2);margin-bottom:6px}
+.vow-author-body p{font-size:12.8px;color:var(--vow-muted);line-height:1.7;margin-bottom:9px}
+.vow-author-nums{display:flex;gap:15px;font-size:12px;color:var(--vow-muted)}
+.vow-author-nums b{color:var(--vow-text);font-weight:700}
+.vow-author-more{margin-left:auto;align-self:flex-start;flex:none}
+
+/* 评论 */
+.vow-comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.vow-comment{
+  background:var(--vow-panel);border:1px solid var(--vow-line);border-radius:13px;
+  padding:16px 18px;min-width:0;
+}
+.vow-comment-head{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.vow-avatar-sm{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-weight:700;font-size:14px;color:#08111d;flex:none}
+.vow-comment-head b{font-size:13.5px;font-weight:600}
+.vow-comment-head span{font-size:11.5px;color:var(--vow-muted);margin-left:auto}
+.vow-comment p{font-size:13.4px;color:#b6c2d8;line-height:1.8}
+.vow-stars{color:var(--vow-warm);font-size:12px;letter-spacing:1px;margin-bottom:6px}
+
+/* 榜单 */
+.vow-ranks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.vow-rank-col{background:var(--vow-panel);border:1px solid var(--vow-line);border-radius:var(--vow-radius);padding:18px;min-width:0}
+.vow-rank-col h3{font-size:14.5px;margin-bottom:14px;color:var(--vow-accent2);letter-spacing:.5px}
+.vow-rank-col ol{list-style:none;display:flex;flex-direction:column;gap:12px}
+.vow-rank-col li{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.6;min-width:0}
+.vow-rank-col li i{
+  font-style:normal;font-weight:800;font-size:12px;color:var(--vow-muted);
+  flex:none;width:20px;text-align:center;
+}
+.vow-rank-col li:nth-child(1) i{color:var(--vow-warm)}
+.vow-rank-col li:nth-child(2) i{color:var(--vow-accent)}
+.vow-rank-col li:nth-child(3) i{color:var(--vow-accent2)}
+.vow-rank-col li span{color:#c3cee2;min-width:0}
+.vow-rank-col li span em{display:block;font-style:normal;font-size:11.5px;color:var(--vow-muted);margin-top:1px}
+
+/* 企业动态 & 合作 & FAQ */
+.vow-split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:28px;align-items:start}
+.vow-news{list-style:none;display:flex;flex-direction:column;gap:0;border:1px solid var(--vow-line);border-radius:var(--vow-radius);overflow:hidden}
+.vow-news li{padding:16px 20px;background:var(--vow-panel);border-bottom:1px solid var(--vow-line)}
+.vow-news li:last-child{border-bottom:none}
+.vow-news time{font-size:11.5px;color:var(--vow-accent2);letter-spacing:.5px;display:block;margin-bottom:4px}
+.vow-news b{font-size:14.5px;display:block;margin-bottom:4px;font-weight:600}
+.vow-news p{font-size:12.8px;color:var(--vow-muted);line-height:1.65}
+.vow-partners{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.vow-partner{
+  background:var(--vow-panel);border:1px solid var(--vow-line);border-radius:12px;
+  padding:16px 14px;text-align:center;font-size:13.5px;color:#c3cee2;font-weight:600;
+  transition:border-color .2s,color .2s;
+}
+.vow-partner small{display:block;font-size:11px;color:var(--vow-muted);font-weight:400;margin-top:3px;letter-spacing:.5px}
+.vow-partner:hover{border-color:var(--vow-accent);color:var(--vow-accent)}
+.vow-faq{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.vow-faq details{
+  background:var(--vow-panel);border:1px solid var(--vow-line);border-radius:12px;
+  padding:0 18px;transition:border-color .2s;
+}
+.vow-faq details[open]{border-color:rgba(86,224,200,.4)}
+.vow-faq summary{
+  cursor:pointer;padding:14px 0;font-size:14.2px;font-weight:600;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+.vow-faq summary::-webkit-details-marker{display:none}
+.vow-faq summary::after{content:"+";color:var(--vow-accent);font-size:19px;font-weight:400;flex:none;transition:transform .2s}
+.vow-faq details[open] summary::after{transform:rotate(45deg)}
+.vow-faq p{font-size:13.2px;color:var(--vow-muted);line-height:1.8;padding:0 0 15px}
+
+/* CTA / 投稿 */
+.vow-cta{
+  background:linear-gradient(120deg,#182543,#14203a 55%,#1d2b4d);
+  border:1px solid var(--vow-line);border-radius:22px;padding:38px 34px;
+  display:flex;align-items:center;gap:30px;flex-wrap:wrap;
+}
+.vow-cta-body{flex:1;min-width:260px}
+.vow-cta-body h2{font-size:clamp(21px,2.6vw,27px);margin-bottom:10px;line-height:1.35}
+.vow-cta-body p{color:var(--vow-muted);font-size:14px;max-width:600px}
+.vow-cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* 页脚 */
+.vow-footer{background:#0a101c;border-top:1px solid var(--vow-line);padding:48px 0 26px;margin-top:10px}
+.vow-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:30px;margin-bottom:34px}
+.vow-footer h4{font-size:13.5px;margin-bottom:13px;color:var(--vow-text);letter-spacing:.5px}
+.vow-footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.vow-footer ul a,.vow-footer ul li{font-size:13px;color:var(--vow-muted);transition:color .18s}
+.vow-footer ul a:hover{color:var(--vow-accent)}
+.vow-footer-brand p{font-size:13px;color:var(--vow-muted);line-height:1.8;margin-top:12px;max-width:330px}
+.vow-footer-bottom{border-top:1px solid var(--vow-line);padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.3px;color:var(--vow-muted)}
+.vow-footer-bottom span{display:block}
+
+/* 回到顶部 & toast & 弹窗 */
+.vow-top{
+  position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:14px;
+  background:var(--vow-panel2);border:1px solid var(--vow-line);color:var(--vow-accent);
+  display:grid;place-items:center;cursor:pointer;z-index:150;opacity:0;pointer-events:none;
+  transition:opacity .25s,transform .25s;box-shadow:0 12px 30px rgba(0,0,0,.45);
+}
+.vow-top.vow-show{opacity:1;pointer-events:auto}
+.vow-top:hover{transform:translateY(-3px)}
+.vow-toast{
+  position:fixed;left:50%;bottom:36px;transform:translate(-50%,20px);
+  background:#22304f;border:1px solid rgba(86,224,200,.45);color:var(--vow-text);
+  padding:11px 22px;border-radius:12px;font-size:13.5px;z-index:400;
+  opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;
+  box-shadow:0 16px 40px rgba(0,0,0,.5);
+}
+.vow-toast.vow-show{opacity:1;transform:translate(-50%,0)}
+.vow-modal-mask{
+  position:fixed;inset:0;background:rgba(5,9,17,.72);backdrop-filter:blur(4px);
+  z-index:300;display:none;align-items:center;justify-content:center;padding:22px;
+}
+.vow-modal-mask.vow-open{display:flex}
+.vow-modal{
+  background:var(--vow-panel);border:1px solid var(--vow-line);border-radius:18px;
+  max-width:520px;width:100%;padding:26px;position:relative;
+  max-height:86vh;overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.6);
+}
+.vow-modal h3{font-size:19px;margin-bottom:8px}
+.vow-modal .vow-modal-sub{font-size:13px;color:var(--vow-muted);margin-bottom:18px;line-height:1.7}
+.vow-modal label{display:block;font-size:13px;color:var(--vow-muted);margin-bottom:6px}
+.vow-modal input,.vow-modal textarea{
+  width:100%;background:var(--vow-bg);border:1px solid var(--vow-line);border-radius:10px;
+  color:var(--vow-text);padding:10px 12px;font-size:14px;font-family:inherit;
+  outline:none;margin-bottom:14px;transition:border-color .2s;
+}
+.vow-modal input:focus,.vow-modal textarea:focus{border-color:var(--vow-accent)}
+.vow-modal textarea{min-height:96px;resize:vertical}
+.vow-modal-close{
+  position:absolute;top:14px;right:14px;background:var(--vow-panel2);border:1px solid var(--vow-line);
+  color:var(--vow-muted);width:32px;height:32px;border-radius:9px;cursor:pointer;
+  display:grid;place-items:center;font-size:16px;line-height:1;font-family:inherit;
+}
+.vow-modal-close:hover{color:var(--vow-text)}
+.vow-empty{padding:26px;text-align:center;color:var(--vow-muted);font-size:13.5px;border:1px dashed var(--vow-line);border-radius:13px}
+
+/* 响应式 */
+@media (max-width:980px){
+  .vow-hero-grid{grid-template-columns:1fr;gap:34px}
+  .vow-hero-float{display:none}
+  .vow-focus-grid{grid-template-columns:1fr}
+  .vow-topics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vow-deep{grid-template-columns:1fr}
+  .vow-aside{position:static}
+  .vow-ranks{grid-template-columns:1fr}
+  .vow-split{grid-template-columns:1fr}
+  .vow-footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .vow-nav{display:none}
+  .vow-burger{display:grid;place-items:center}
+  .vow-header-inner{gap:12px}
+  .vow-search{order:3;width:100%;flex:1 1 100%}
+  .vow-header-inner{flex-wrap:wrap}
+  .vow-authors{grid-template-columns:1fr}
+  .vow-comments{grid-template-columns:1fr}
+  .vow-topics{grid-template-columns:1fr}
+  .vow-videorow{grid-template-columns:34px minmax(0,1fr)}
+  .vow-videorow-data{grid-column:1/-1;justify-content:flex-start;padding-left:50px}
+  .vow-stats{grid-template-columns:1fr}
+  .vow-hero{padding:38px 0 46px}
+  .vow-section{padding:46px 0}
+  .vow-cta{padding:26px 20px}
+  .vow-footer-grid{grid-template-columns:1fr;gap:24px}
+  .vow-notice-list{gap:12px;flex-direction:column}
+  .vow-notice-item{white-space:normal}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="vow-skip" href="#vow-main">跳到主要内容</a>
+
+<div class="vow-sticky" id="vow-topbar">
+  <div class="vow-notice" role="region" aria-label="官方公告">
+    <div class="vow-wrap">
+      <span class="vow-notice-tag">公告</span>
+      <div class="vow-notice-list">
+        <div class="vow-notice-item"><b>11月20日</b>「视频在线观看·冬季原创影像企划」正式上线，<span>接受投稿报名</span><em>NEW</em></div>
+        <div class="vow-notice-item"><b>11月18日</b> 官方发布 4K 高清播放器升级，<span>支持多端同步进度</span></div>
+        <div class="vow-notice-item"><b>11月15日</b> 创作者激励计划第 6 期名单公示，<span>共 128 位入选</span></div>
+      </div>
+    </div>
+  </div>
+
+  <header class="vow-header">
+    <div class="vow-header-inner">
+      <a class="vow-logo" href="#vow-hero" aria-label="视频在线观看 官方网站首页">
+        <span class="vow-logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M8 6l10 6-10 6z" fill="#06121d"/></svg>
+        </span>
+        <span>视频在线观看<small>VIDEO ONLINE</small></span>
+      </a>
+      <nav class="vow-nav" aria-label="主导航">
+        <a href="#vow-focus">焦点内容</a>
+        <a href="#vow-deep">深度解读</a>
+        <a href="#vow-topics">专题企划</a>
+        <a href="#vow-authors">创作者</a>
+        <a href="#vow-ranks">榜单</a>
+        <a href="#vow-community">社区口碑</a>
+        <a href="#vow-help">帮助</a>
+      </nav>
+      <div class="vow-search">
+        <input type="search" id="vow-search-input" placeholder="搜索视频、创作者或专题" aria-label="站内搜索" autocomplete="off">
+        <button type="button" id="vow-search-btn" aria-label="执行搜索">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        </button>
+        <div class="vow-search-hint" id="vow-search-hint" role="status" aria-live="polite"></div>
+      </div>
+      <button class="vow-burger" type="button" id="vow-burger" aria-label="打开导航菜单" aria-expanded="false" aria-controls="vow-mobile-nav">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div class="vow-mobile-nav" id="vow-mobile-nav">
+      <a href="#vow-focus">焦点内容</a>
+      <a href="#vow-deep">深度解读</a>
+      <a href="#vow-topics">专题企划</a>
+      <a href="#vow-authors">创作者</a>
+      <a href="#vow-ranks">榜单</a>
+      <a href="#vow-community">社区口碑</a>
+      <a href="#vow-help">帮助</a>
+    </div>
+  </header>
+</div>
+
+<main id="vow-main">
+
+  <!-- 首屏 -->
+  <section class="vow-hero vow-anchor" id="vow-hero">
+    <div class="vow-wrap vow-hero-grid">
+      <div>
+        <span class="vow-eyebrow"><i aria-hidden="true"></i>官方网站 · 官方发布 · 持续运营</span>
+        <h1>视频在线观看<span>高清原创影像社区</span></h1>
+        <p class="vow-hero-lead">作为深耕视频领域的垂直平台，我们为创作者与企业搭建值得信赖的高品质内容生态。</p>
+        <p class="vow-hero-desc">视频在线观看官方网站以原创、正版、高清为核心标准，汇聚影像创作者、行业观察者与真实生活记录者。平台持续运营官方专题、创作者激励与社区共创计划，让每一段认真拍摄的影像，都能被看见、被讨论、被长久保存。</p>
+        <div class="vow-hero-actions">
+          <a class="vow-btn vow-btn-primary" href="#vow-focus">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg>
+            观看官网精选
+          </a>
+          <button class="vow-btn vow-btn-ghost" type="button" data-vow-open="submit">投稿报名</button>
+          <button class="vow-btn vow-btn-ghost" type="button" data-vow-open="share">分享官网</button>
+        </div>
+        <div class="vow-stats">
+          <div class="vow-stat"><b data-vow-count="12800">0</b><span>高清视频累计收录</span></div>
+          <div class="vow-stat"><b data-vow-count="3260">0</b><span>认证原创创作者</span></div>
+          <div class="vow-stat"><b data-vow-count="96">0<em>%</em></b><span>社区口碑好评率</span></div>
+        </div>
+      </div>
+      <div class="vow-hero-visual">
+        <figure class="vow-hero-figure">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 550'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23121b30'/%3E%3Cstop offset='1' stop-color='%2324315a'/%3E%3C/linearGradient%3E%3ClinearGradient id='g2' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2356e0c8'/%3E%3Cstop offset='1' stop-color='%237c8cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='550' fill='url(%23g1)'/%3E%3Ccircle cx='610' cy='140' r='170' fill='%237c8cff' opacity='.16'/%3E%3Ccircle cx='180' cy='430' r='150' fill='%2356e0c8' opacity='.13'/%3E%3Crect x='90' y='120' width='380' height='230' rx='18' fill='%230b1222' stroke='%233a4a72' stroke-width='2'/%3E%3Crect x='112' y='142' width='336' height='150' rx='10' fill='%231a2440'/%3E%3Cpath d='M255 200l55 33-55 33z' fill='url(%23g2)'/%3E%3Crect x='112' y='306' width='150' height='9' rx='4.5' fill='%233d4f7d'/%3E%3Crect x='112' y='325' width='96' height='9' rx='4.5' fill='%232b3a5f'/%3E%3Crect x='112' y='344' width='210' height='9' rx='4.5' fill='%232b3a5f'/%3E%3Crect x='512' y='330' width='196' height='120' rx='14' fill='%23141e36' stroke='%233a4a72' stroke-width='2'/%3E%3Ccircle cx='562' cy='376' r='20' fill='%2356e0c8' opacity='.85'/%3E%3Crect x='596' y='366' width='82' height='8' rx='4' fill='%233d4f7d'/%3E%3Crect x='596' y='384' width='58' height='8' rx='4' fill='%232b3a5f'/%3E%3Crect x='538' y='410' width='140' height='7' rx='3.5' fill='%232b3a5f'/%3E%3Cpath d='M0 550 L200 430 L420 500 L620 400 L800 470 L800 550Z' fill='%23101a2e' opacity='.9'/%3E%3C/svg%3E" alt="视频在线观看官方网站首屏主视觉：夜间剪辑工作台上的高清播放器与创作者数据面板" width="800" height="550">
+          <span class="vow-hero-badge">官方主视觉 · 4K 高清</span>
+          <figcaption><b>本周官方推荐</b> 冬季原创影像企划 · 第 01 号作品</figcaption>
+        </figure>
+        <div class="vow-hero-float">
+          <b>内容生态实时</b>
+          今日新增原创视频 268 条，社区互动 1.4 万次
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点内容 -->
+  <section class="vow-section vow-alt vow-anchor" id="vow-focus">
+    <div class="vow-wrap">
+      <div class="vow-section-head">
+        <span class="vow-kicker">Focus · 焦点推荐</span>
+        <h2>视频在线观看官网焦点：本周值得完整看完的影像</h2>
+        <p>编辑部从官方投稿池与创作者社区中挑选，兼顾内容深度与画面品质，仅作推荐，不替代你的判断。</p>
+      </div>
+      <div class="vow-focus-grid">
+        <article class="vow-focus-main">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='f1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231a2c3e'/%3E%3Cstop offset='1' stop-color='%232c4a58'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23f1)'/%3E%3Cpath d='M0 340 Q160 250 330 320 T800 270 L800 450 L0 450Z' fill='%2312232e'/%3E%3Cpath d='M0 380 Q200 310 400 370 T800 330 L800 450 L0 450Z' fill='%230d1a24'/%3E%3Ccircle cx='640' cy='110' r='52' fill='%2356e0c8' opacity='.55'/%3E%3Crect x='70' y='90' width='240' height='14' rx='7' fill='%2356e0c8' opacity='.7'/%3E%3Crect x='70' y='122' width='170' height='10' rx='5' fill='%23a8c6cf' opacity='.6'/%3E%3Crect x='70' y='150' width='300' height='10' rx='5' fill='%23a8c6cf' opacity='.35'/%3E%3Cg opacity='.85'%3E%3Crect x='96' y='236' width='64' height='40' rx='6' fill='%231c3540' stroke='%233f6b78'/%3E%3Crect x='176' y='222' width='64' height='54' rx='6' fill='%231c3540' stroke='%233f6b78'/%3E%3Crect x='256' y='248' width='64' height='28' rx='6' fill='%231c3540' stroke='%233f6b78'/%3E%3C/g%3E%3Cpath d='M500 320l44 26-44 26z' fill='%23ffffff' opacity='.9'/%3E%3C/svg%3E" alt="焦点视频《把凌晨四点的城市剪辑成一条河》封面：夜色中的河岸与剪辑轨道" width="800" height="450">
+          <div class="vow-focus-body">
+            <div class="vow-tag-row">
+              <span class="vow-tag vow-tag-hot">官网首选</span>
+              <span class="vow-tag">城市探索</span>
+              <span class="vow-tag">创作幕后</span>
+            </div>
+            <h3>把凌晨四点的城市剪辑成一条河：一条 12 分钟纪录短片的完整拆解</h3>
+            <p>从凌晨踩点、环境收音到剪辑节奏设计，作者把一条安静的城市纪录取名为「河」，也把拍摄时遇到的阻力一并放进了片尾彩蛋。适合正在尝试纪录影像的创作者逐帧观看。</p>
+            <div class="vow-meta">
+              <span>创作者 <b>凌晨放映室</b></span>
+              <span>播放 <b>82.4 万</b></span>
+              <span>点赞 <b>3.6 万</b></span>
+              <span>收藏 <b>1.9 万</b></span>
+              <div class="vow-actions">
+                <button class="vow-act" type="button" data-vow-like="like-a" data-vow-base="36000">♥ <span>3.6万</span></button>
+                <button class="vow-act" type="button" data-vow-fav="fav-a">☆ 收藏</button>
+                <button class="vow-act" type="button" data-vow-copy="焦点视频《把凌晨四点的城市剪辑成一条河》">复制链接</button>
+              </div>
+            </div>
+          </div>
+        </article>
+        <div class="vow-focus-side">
+          <article class="vow-side-card">
+            <div class="vow-side-thumb">
+              <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 140'%3E%3Crect width='200' height='140' fill='%232b1f2e'/%3E%3Ccircle cx='150' cy='42' r='34' fill='%23ff8a5c' opacity='.6'/%3E%3Crect x='20' y='88' width='120' height='9' rx='4.5' fill='%23ffb45c' opacity='.75'/%3E%3Crect x='20' y='106' width='82' height='8' rx='4' fill='%23c98f7a' opacity='.6'/%3E%3C/svg%3E" alt="推荐视频《一杯手冲的十分钟》封面：暖色灯光下的咖啡滤杯剪影" width="200" height="140">
+            </div>
+            <div>
+              <h3>一杯手冲的十分钟：把日常拍成可重复观看的仪式</h3>
+              <p>生活记录 · 播放 41.2 万</p>
+            </div>
+          </article>
+          <article class="vow-side-card">
+            <div class="vow-side-thumb">
+              <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 140'%3E%3Crect width='200' height='140' fill='%2314282c'/%3E%3Cpath d='M0 108 L60 66 L108 96 L160 52 L200 82 L200 140 L0 140Z' fill='%233f8f7c' opacity='.65'/%3E%3Ccircle cx='44' cy='38' r='17' fill='%2356e0c8' opacity='.6'/%3E%3C/svg%3E" alt="推荐视频《山线之上》封面：绿色山脊线与清晨薄雾" width="200" height="140">
+            </div>
+            <div>
+              <h3>山线之上：一次没有脚本的户外跟拍实验</h3>
+              <p>户外活动 · 播放 28.7 万</p>
+            </div>
+          </article>
+          <article class="vow-side-card">
+            <div class="vow-side-thumb">
+              <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 140'%3E%3Crect width='200' height='140' fill='%231c1b33'/%3E%3Crect x='26' y='30' width='64' height='80' rx='6' fill='%232b2850' stroke='%237c8cff' opacity='.7'/%3E%3Crect x='104' y='46' width='64' height='64' rx='6' fill='%232b2850' stroke='%237c8cff' opacity='.5'/%3E%3Ccircle cx='58' cy='70' r='12' fill='%237c8cff' opacity='.7'/%3E%3C/svg%3E" alt="推荐视频《镜头之外的设备清单》封面：两块并排的素材硬盘与屏幕" width="200" height="140">
+            </div>
+            <div>
+              <h3>镜头之外的设备清单：一份写给新人的真实预算表</h3>
+              <p>教程干货 · 播放 33.9 万</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div style="margin-top:34px">
+        <div class="vow-videolist">
+          <article class="vow-videorow">
+            <span class="vow-videorow-idx">01</span>
+            <div class="vow-videorow-body">
+              <h3>视频在线观看官网精选：三种开头三秒法则，实测哪种更留人</h3>
+              <p>用同一段素材剪出三种不同开头，逐帧对比完播率曲线，结论比经验更可靠。</p>
+              <div class="vow-videorow-tags"><span>实用技巧</span><span>剪辑</span><span>数据复盘</span></div>
+            </div>
+            <div class="vow-videorow-data">
+              <span>播放 <b>19.8万</b></span><span>点赞 <b>8421</b></span><span>收藏 <b>6033</b></span>
+              <button class="vow-act" type="button" data-vow-like="like-b" data-vow-base="8421">♥ <span>8421</span></button>
+            </div>
+          </article>
+          <article class="vow-videorow">
+            <span class="vow-videorow-idx">02</span>
+            <div class="vow-videorow-body">
+              <h3>在老城区拍一条不打扰任何人的街景素材</h3>
+              <p>拍摄伦理与画面质感如何兼得？作者带着一支定焦镜头走完了三条街。</p>
+              <div class="vow-videorow-tags"><span>城市探索</span><span>在地文化</span><span>拍摄手记</span></div>
+            </div>
+            <div class="vow-videorow-data">
+              <span>播放 <b>16.2万</b></span><span>点赞 <b>6210</b></span><span>收藏 <b>4188</b></span>
+              <button class="vow-act" type="button" data-vow-like="like-c" data-vow-base="6210">♥ <span>6210</span></button>
+            </div>
+          </article>
+          <article class="vow-videorow">
+            <span class="vow-videorow-idx">03</span>
+            <div class="vow-videorow-body">
+              <h3>十分钟讲清一个复杂概念：知识类视频的脚本结构拆解</h3>
+              <p>从提问、类比到案例回落，把「讲清楚」变成可复用的脚本模板。</p>
+              <div class="vow-videorow-tags"><span>知识科普</span><span>教程干货</span><span>脚本</span></div>
+            </div>
+            <div class="vow-videorow-data">
+              <span>播放 <b>24.5万</b></span><span>点赞 <b>1.1万</b></span><span>收藏 <b>9027</b></span>
+              <button class="vow-act" type="button" data-vow-like="like-d" data-vow-base="11000">♥ <span>1.1万</span></button>
+            </div>
+          </article>
+          <article class="vow-videorow">
+            <span class="vow-videorow-idx">04</span>
+            <div class="vow-videorow-body">
+              <h3>把通勤路上的四十分钟，剪成一支没有台词的短片</h3>
+              <p>声音设计占据了一半工作量，作者公开了地铁环境音的处理方式。</p>
+              <div class="vow-videorow-tags"><span>日常记录</span><span>声音设计</span><span>治愈影像</span></div>
+            </div>
+            <div class="vow-videorow-data">
+              <span>播放 <b>13.7万</b></span><span>点赞 <b>4980</b></span><span>收藏 <b>3421</b></span>
+              <button class="vow-act" type="button" data-vow-like="like-e" data-vow-base="4980">♥ <span>4980</span></button>
+            </div>
+          </article>
+          <article class="vow-videorow">
+            <span class="vow-videorow-idx">05</span>
+            <div class="vow-videorow-body">
+              <h3>创作者访谈：从公司离职后，我把视频号做成了长期作品</h3>
+              <p>关于收入结构、更新节奏与自我怀疑，一次不设防的对话。</p>
+              <div class="vow-videorow-tags"><span>人物访谈</span><span>创作者</span><span>成长</span></div>
+            </div>
+            <div class="vow-videorow-data">
+              <span>播放 <b>21.6万</b></span><span>点赞 <b>9733</b></span><span>收藏 <b>5144</b></span>
+              <button class="vow-act" type="button" data-vow-like="like-f" data-vow-base="9733">♥ <span>9733</span></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度解读 -->
+  <section class="vow-section vow-anchor" id="vow-deep">
+    <div class="vow-wrap">
+      <div class="vow-section-head">
+        <span class="vow-kicker">Insight · 深度解读</span>
+        <h2>视频在线观看的行业解析：高清、原创与内容生态如何共同成立</h2>
+        <p>这是一篇写给创作者、品牌方与普通观众的说明，解释平台为什么这样设计，以及这些选择背后的长期判断。</p>
+      </div>
+      <div class="vow-deep">
+        <article>
+          <h3>一、为什么「视频在线观看」需要重新定义观看体验</h3>
+          <p>在过去相当长的一段时间里，人们谈到视频在线观看，首先想到的是「能不能打开」「卡不卡」。但当带宽与设备不再是门槛，真正的差异就转移到了内容本身：画质是否稳定、字幕是否准确、播放器是否尊重观看节奏、创作者是否被公平对待。视频在线观看官方网站从第一天起就把这些看似琐碎的问题写进产品原则——高清不是一句宣传语，而是码率、转码、播放器与存储共同构成的工程结果；正版不是一纸声明，而是与创作者逐条确认授权、保留署名与收益分成的长期机制。</p>
+          <p>我们更愿意把平台理解为一个<strong>可持续运营的影像社区</strong>：观众在这里获得完整而非被打断的观看体验，创作者在这里获得被看见的路径，企业在这里获得与真实内容生态对话的机会。这三件事互为条件，缺一不可。</p>
+          <figure class="vow-deep-figure">
+            <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect width='800' height='400' fill='%230f1a2c'/%3E%3Cg stroke='%232b3d5e' stroke-width='2'%3E%3Cpath d='M80 320 L80 90'/%3E%3Cpath d='M80 320 L730 320'/%3E%3C/g%3E%3Cg fill='%2356e0c8'%3E%3Crect x='130' y='250' width='48' height='70' rx='5' opacity='.55'/%3E%3Crect x='212' y='205' width='48' height='115' rx='5' opacity='.65'/%3E%3Crect x='294' y='160' width='48' height='160' rx='5' opacity='.75'/%3E%3Crect x='376' y='188' width='48' height='132' rx='5' opacity='.65'/%3E%3Crect x='458' y='120' width='48' height='200' rx='5' opacity='.9'/%3E%3Crect x='540' y='148' width='48' height='172' rx='5' opacity='.75'/%3E%3Crect x='622' y='100' width='48' height='220' rx='5' opacity='.95'/%3E%3C/g%3E%3Cg stroke='%237c8cff' stroke-width='3' fill='none'%3E%3Cpath d='M130 250 L212 205 L294 160 L376 188 L458 120 L540 148 L622 100 L690 130' opacity='.85'/%3E%3C/g%3E%3C/svg%3E" alt="视频在线观看平台内容数据解析图：高清视频收录量的逐季度增长柱状图" width="800" height="400">
+            <figcaption>平台内容结构变化：原创与高清内容占比逐季度提升</figcaption>
+          </figure>
+          <h3>二、原创建模：从投稿入口到创作者激励的完整链路</h3>
+          <p>很多平台把「原创」写在首页最显眼的位置，却把真正的门槛藏在上传之后。视频在线观看官网的做法恰好相反：投稿入口前置，规则公开，审核反馈可追踪。每一条进入官网推荐池的作品，都会经过内容合规、画质抽检与信息完整度三项检查，未通过的作品不会被静默丢弃，而是明确告知可修改项。我们认为，一个值得信赖的平台，不应该让创作者在不确定中反复试错。</p>
+          <p>在激励层面，平台采用「播放分成 + 专题约稿 + 官方活动」三层结构。播放分成保证基础收益的稳定，专题约稿让有持续创作能力的作者获得更明确的合作预期，官方活动则为新人与小众题材提供曝光窗口。过去一年里，参与过至少一次官方专题的创作者，其后续三个月的内容更新频率平均提升了 41%，这说明被认真对待的创作者，更愿意把创作当作长期事业。</p>
+          <p>我们也清楚地知道，激励不能解决所有问题。设备成本、时间成本、家庭支持，都是创作者的现实处境。因此平台在帮助中心里保留了公开的器材建议、拍摄计划模板与时间管理方法，也鼓励成熟创作者把踩坑经验写成可用文档。这种「经验共享」的氛围，是内容生态能够自我生长的关键。</p>
+          <h3>三、社区口碑从哪来：评论区是内容的一部分</h3>
+          <p>视频在线观看的评论区不是附属品。我们提供短评、长评与引用摘录三种表达方式，并保留了「不同意也不争吵」的社区准则。真实运营中，最受欢迎的不是情绪化的短句，而是带着具体时间码、具体拍摄地点与具体改进建议的长评。这些评论让一条视频拥有了「二次观看」的价值，也让后来的观众更容易判断是否值得花时间。</p>
+          <p>在口碑维护上，我们选择慢一点的方式：不追求短期流量峰值，而是通过专题策展、评分摘要与创作者回访，让优质内容获得更长的生命周期。截至目前，官网精选内容的半年留存观看量占其总播放的 34%，显著高于行业常见的短周期曲线。这组数字谈不上惊人，却让我们相信<strong>持续运营</strong>这四个字是有分量的。</p>
+          <figure class="vow-deep-figure">
+            <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect width='800' height='400' fill='%23111c30'/%3E%3Cg%3E%3Ccircle cx='220' cy='200' r='96' fill='none' stroke='%232c3d61' stroke-width='26'/%3E%3Ccircle cx='220' cy='200' r='96' fill='none' stroke='%2356e0c8' stroke-width='26' stroke-dasharray='420 604' stroke-linecap='round' transform='rotate(-90 220 200)'/%3E%3C/g%3E%3Cg fill='%23c7d3e8' font-family='sans-serif' font-size='15'%3E%3Ctext x='380' y='150'>原创授权内容 68%</text%3E%3Ctext x='380' y='200'>官方企划内容 21%</text%3E%3Ctext x='380' y='250'>社区共创内容 11%</text%3E%3C/g%3E%3Cg fill='%2356e0c8'%3E%3Crect x='380' y='136' width='14' height='14' rx='3'/%3E%3C/g%3E%3Cg fill='%237c8cff'%3E%3Crect x='380' y='186' width='14' height='14' rx='3'/%3E%3C/g%3E%3Cg fill='%23ffb45c'%3E%3Crect x='380' y='236' width='14' height='14' rx='3'/%3E%3C/g%3E%3C/svg%3E" alt="视频在线观看内容构成比例图：原创授权、官方企划与社区共创占比" width="800" height="400">
+            <figcaption>官网内容构成：原创授权为主体，官方企划与共创并行</figcaption>
+          </figure>
+          <h3>四、面向未来：视频在线观看想成为什么样的企业</h3>
+          <p>我们不打算把自己描述成无所不能的平台。更准确的定位是：在视频这个垂直领域里，做一个长期主义者。我们关注画质标准，也关注创作者的休息；我们重视数据，也承认数据看不见的部分——比如一次拍摄失败后的沮丧，比如第一次收到长评时的开心。这些无法量化的东西，恰恰构成了内容生态里最真实的部分。</p>
+          <p>未来一年，视频在线观看官方网站将继续推进三项工作：一是完善高清播放的多端一致性，让同一部作品在不同设备上保持统一的观感；二是扩大创作者访谈与幕后内容的比重，把「怎么拍出来」讲透；三是保持专题企划的稳定更新，用策展的方式对抗信息噪音。我们希望当观众搜索视频在线观看时，能找到一个可以安静看完一条视频、并且愿意留下真实评论的地方。</p>
+        </article>
+        <aside class="vow-aside" aria-label="深度阅读提示">
+          <h3>阅读提示</h3>
+          <ul class="vow-aside-list">
+            <li><b>适合谁读</b>正在规划长期更新的创作者、希望理解内容生态的品牌方，以及关心观看体验的普通观众。</li>
+            <li><b>核心结论</b>高清与原创不是营销词，而是需要被工程化、被制度化的日常动作。</li>
+            <li><b>延伸观看</b>配合《把凌晨四点的城市剪辑成一条河》一起看，能更直观理解纪录影像的节奏设计。</li>
+            <li><b>数据说明</b>文中比例与增长率来自平台公开运营月报的区间整理，用于说明趋势，不构成投资建议。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="vow-section vow-alt vow-anchor" id="vow-topics">
+    <div class="vow-wrap">
+      <div class="vow-section-head">
+        <span class="vow-kicker">Special · 专题企划</span>
+        <h2>官方企划在线观看入口：三个正在更新的影像专题</h2>
+        <p>每个专题由编辑部策展，创作者投稿，官方发布更新进度，持续运营，不设硬性截止后的冷处理。</p>
+      </div>
+      <div class="vow-topics">
+        <article class="vow-topic">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23142033'/%3E%3Ccircle cx='640' cy='96' r='58' fill='%23ffb45c' opacity='.45'/%3E%3Cpath d='M0 330 Q200 260 400 320 T800 280 L800 450 L0 450Z' fill='%231a2b40'/%3E%3Cg stroke='%2356e0c8' stroke-width='3' opacity='.7'%3E%3Cpath d='M70 150 L170 150 L170 250'/%3E%3Cpath d='M170 250 L270 250'/%3E%3C/g%3E%3Ccircle cx='70' cy='150' r='9' fill='%2356e0c8'/%3E%3Ccircle cx='270' cy='250' r='9' fill='%237c8cff'/%3E%3C/svg%3E" alt="专题「冬季原创影像企划」封面：暖色光斑与创作路径示意图" width="800" height="450">
+          <div class="vow-topic-body">
+            <span class="vow-topic-status">更新中 · 已收录 46 条投稿</span>
+            <h3>冬季原创影像企划</h3>
+            <p>围绕「冷与暖」的对照，征集 3 至 15 分钟的原创短片，鼓励在有限条件下完成完整表达。</p>
+            <ul class="vow-topic-entries">
+              <li>「零下七度的早餐摊」——把热气拍出层次</li>
+              <li>一个人的冬夜剪辑清单：从素材到成片</li>
+              <li>企划评审手记：我们如何选出第一批作品</li>
+            </ul>
+          </div>
+        </article>
+        <article class="vow-topic">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%231b2236'/%3E%3Cg fill='none' stroke='%237c8cff' stroke-width='3' opacity='.6'%3E%3Crect x='90' y='110' width='180' height='110' rx='12'/%3E%3Crect x='320' y='150' width='180' height='110' rx='12'/%3E%3Crect x='550' y='100' width='180' height='110' rx='12'/%3E%3C/g%3E%3Cg fill='%2356e0c8'%3E%3Ccircle cx='180' cy='165' r='14' opacity='.8'/%3E%3Ccircle cx='410' cy='205' r='14' opacity='.65'/%3E%3Ccircle cx='640' cy='155' r='14' opacity='.9'/%3E%3C/g%3E%3C/svg%3E" alt="专题「镜头之外」封面：三块排列的创作者工作界面示意" width="800" height="450">
+          <div class="vow-topic-body">
+            <span class="vow-topic-status">更新中 · 每周三上新</span>
+            <h3>镜头之外：创作者幕后访谈</h3>
+            <p>不聊爆款公式，只聊具体的选择：为什么这个机位、为什么删掉那一段、为什么停更三个月。</p>
+            <ul class="vow-topic-entries">
+              <li>访谈 01：把爱好做成职业的第三年</li>
+              <li>访谈 02：一个人完成拍摄、剪辑与调色</li>
+              <li>访谈 03：当评论区开始认真讨论技术细节</li>
+            </ul>
+          </div>
+        </article>
+        <article class="vow-topic">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%231a2b26'/%3E%3Cg stroke='%233f8f7c' stroke-width='3' fill='none' opacity='.8'%3E%3Cpath d='M0 340 L140 250 L280 300 L430 190 L580 250 L720 160 L800 200'/%3E%3C/g%3E%3Ccircle cx='430' cy='190' r='10' fill='%2356e0c8'/%3E%3Ccircle cx='720' cy='160' r='10' fill='%23ffb45c'/%3E%3Cg fill='%23a8c6cf' opacity='.4'%3E%3Crect x='80' y='90' width='120' height='8' rx='4'/%3E%3Crect x='80' y='112' width='78' height='8' rx='4'/%3E%3C/g%3E%3C/svg%3E" alt="专题「在地行走计划」封面：山脊线与路径节点示意图" width="800" height="450">
+          <div class="vow-topic-body">
+            <span class="vow-topic-status">即将开放报名 · 12 月 1 日</span>
+            <h3>在地行走计划：用视频记录身边三公里</h3>
+            <p>不追求远方，把镜头对准日常经过却从未认真看过的地方，强调在地文化与真实记录。</p>
+            <ul class="vow-topic-entries">
+              <li>报名指引：如何提交一份完整的企划书</li>
+              <li>参考片单：六条可学习的在地纪录短片</li>
+              <li>拍摄攻略：小空间里的自然光利用</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者矩阵 -->
+  <section class="vow-section vow-anchor" id="vow-authors">
+    <div class="vow-wrap">
+      <div class="vow-section-head">
+        <span class="vow-kicker">Creators · 创作者矩阵</span>
+        <h2>视频在线观看的创作者们：持续更新的长期主义样本</h2>
+        <p>以下作者均通过平台认证，作品以原创为主。简介由作者本人确认，数据每周更新一次。</p>
+      </div>
+      <div class="vow-authors">
+        <article class="vow-author">
+          <div class="vow-avatar" style="background:linear-gradient(135deg,#56e0c8,#7c8cff)" aria-hidden="true">凌</div>
+          <div class="vow-author-body">
+            <h3>凌晨放映室 <em>认证创作者</em></h3>
+            <div class="vow-author-field">擅长：城市纪录 · 声音设计</div>
+            <p>习惯在凌晨出门，带着一支定焦和一台录音机。作品数量不多，但每一条都保留了完整的环境声。相信城市最动人的部分往往发生在没人注意的时刻。</p>
+            <div class="vow-author-nums"><span>作品 <b>86</b></span><span>粉丝 <b>42.6万</b></span></div>
+          </div>
+          <button class="vow-act vow-author-more" type="button" data-vow-author="凌晨放映室|城市纪录与声音设计|86|42.6万|习惯在凌晨出门，带着一支定焦和一台录音机。作品数量不多，但每一条都保留了完整的环境声。">详情</button>
+        </article>
+        <article class="vow-author">
+          <div class="vow-avatar" style="background:linear-gradient(135deg,#ffb45c,#ff8a5c)" aria-hidden="true">南</div>
+          <div class="vow-author-body">
+            <h3>南山有炊 <em>认证创作者</em></h3>
+            <div class="vow-author-field">擅长：美食烹饪 · 日常生活</div>
+            <p>把厨房当作拍摄现场，但从不摆拍出锅瞬间。擅长用固定机位记录完整烹饪过程，评论区常变成菜谱讨论区，作者本人会认真回复每一个火候问题。</p>
+            <div class="vow-author-nums"><span>作品 <b>142</b></span><span>粉丝 <b>58.3万</b></span></div>
+          </div>
+          <button class="vow-act vow-author-more" type="button" data-vow-author="南山有炊|美食烹饪与日常生活|142|58.3万|把厨房当作拍摄现场，但从不摆拍出锅瞬间。擅长用固定机位记录完整烹饪过程，评论区常变成菜谱讨论区。">详情</button>
+        </article>
+        <article class="vow-author">
+          <div class="vow-avatar" style="background:linear-gradient(135deg,#7c8cff,#b3bcff)" aria-hidden="true">言</div>
+          <div class="vow-author-body">
+            <h3>言究所 <em>官方推荐</em></h3>
+            <div class="vow-author-field">擅长：知识科普 · 深度测评</div>
+            <p>前媒体从业者，坚持在每条视频里至少给出一个可验证的出处。擅长把复杂概念拆成可理解的结构，也乐于在评论区纠正自己的错误，被观众称为「较真型创作者」。</p>
+            <div class="vow-author-nums"><span>作品 <b>97</b></span><span>粉丝 <b>63.1万</b></span></div>
+          </div>
+          <button class="vow-act vow-author-more" type="button" data-vow-author="言究所|知识科普与深度测评|97|63.1万|前媒体从业者，坚持在每条视频里至少给出一个可验证的出处。擅长把复杂概念拆成可理解的结构，也会在评论区纠正自己的错误。">详情</button>
+        </article>
+        <article class="vow-author">
+          <div class="vow-avatar" style="background:linear-gradient(135deg,#56e0c8,#3f8f7c)" aria-hidden="true">野</div>
+          <div class="vow-author-body">
+            <h3>野行记录 <em>认证创作者</em></h3>
+            <div class="vow-author-field">擅长：户外活动 · 旅行见闻</div>
+            <p>一年中有四个月在山里。拍摄装备尽量轻，画面尽量稳。作品以长距离徒步与自然观察为主，偶尔分享装备清单，但从不推荐用不到的东西。</p>
+            <div class="vow-author-nums"><span>作品 <b>74</b></span><span>粉丝 <b>35.8万</b></span></div>
+          </div>
+          <button class="vow-act vow-author-more" type="button" data-vow-author="野行记录|户外活动与旅行见闻|74|35.8万|一年中有四个月在山里。拍摄装备尽量轻，画面尽量稳。作品以长距离徒步与自然观察为主，偶尔分享装备清单。">详情</button>
+        </article>
+        <article class="vow-author">
+          <div class="vow-avatar" style="background:linear-gradient(135deg,#ff8a5c,#ffb45c)" aria-hidden="true">陈</div>
+          <div class="vow-author-body">
+            <h3>陈小满的手作间 <em>认证创作者</em></h3>
+            <div class="vow-author-field">擅长：手作 DIY · 创作幕后</div>
+            <p>从木工到布艺，热衷于把制作过程完整呈现，包括失败的那一次。她认为手作视频的价值不在成品，而在观众看完之后产生「我也试试」的冲动。</p>
+            <div class="vow-author-nums"><span>作品 <b>118</b></span><span>粉丝 <b>47.2万</b></span></div>
+          </div>
+          <button class="vow-act vow-author-more" type="button" data-vow-author="陈小满的手作间|手作 DIY 与创作幕后|118|47.2万|从木工到布艺，热衷于把制作过程完整呈现，包括失败的那一次。认为手作视频的价值不在成品，而在观众看完之后产生动手的冲动。">详情</button>
+        </article>
+        <article class="vow-author">
+          <div class="vow-avatar" style="background:linear-gradient(135deg,#b3bcff,#56e0c8)" aria-hidden="true">沈</div>
+          <div class="vow-author-body">
+            <h3>沈先生的胶片柜 <em>认证创作者</em></h3>
+            <div class="vow-author-field">擅长：艺术美学 · 治愈影像</div>
+            <p>坚持使用胶片与老镜头拍摄，后期尽量少动。作品节奏偏慢，适合在睡前观看。常被观众形容为「像翻一本旧相册」，他本人对此评价相当满意。</p>
+            <div class="vow-author-nums"><span>作品 <b>63</b></span><span>粉丝 <b>29.4万</b></span></div>
+          </div>
+          <button class="vow-act vow-author-more" type="button" data-vow-author="沈先生的胶片柜|艺术美学与治愈影像|63|29.4万|坚持使用胶片与老镜头拍摄，后期尽量少动。作品节奏偏慢，适合在睡前观看。常被观众形容为像翻一本旧相册。">详情</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 榜单 -->
+  <section class="vow-section vow-alt vow-anchor" id="vow-ranks">
+    <div class="vow-wrap">
+      <div class="vow-section-head">
+        <span class="vow-kicker">Ranking · 数据榜单</span>
+        <h2>视频在线观看官网榜单：热度、新人与口碑三个维度</h2>
+        <p>榜单按自然周统计，算法权重公开可查。我们尽量让「被看见」不只依赖运气。</p>
+      </div>
+      <div class="vow-ranks">
+        <div class="vow-rank-col">
+          <h3>本周热度榜</h3>
+          <ol>
+            <li><i>1</i><span>把凌晨四点的城市剪辑成一条河<em>播放 82.4 万</em></span></li>
+            <li><i>2</i><span>一杯手冲的十分钟<em>播放 41.2 万</em></span></li>
+            <li><i>3</i><span>十分钟讲清一个复杂概念<em>播放 24.5 万</em></span></li>
+            <li><i>4</i><span>镜头之外的设备清单<em>播放 33.9 万</em></span></li>
+            <li><i>5</i><span>把通勤剪成一支短片<em>播放 13.7 万</em></span></li>
+          </ol>
+        </div>
+        <div class="vow-rank-col">
+          <h3>新人潜力榜</h3>
+          <ol>
+            <li><i>1</i><span>半格相机日记<em>首月更新 9 条</em></span></li>
+            <li><i>2</i><span>阿禾的菜园记录<em>首月更新 7 条</em></span></li>
+            <li><i>3</i><span>小城放映计划<em>首月更新 6 条</em></span></li>
+            <li><i>4</i><span>纸上的建筑课<em>首月更新 5 条</em></span></li>
+            <li><i>5</i><span>夜班公交观察<em>首月更新 5 条</em></span></li>
+          </ol>
+        </div>
+        <div class="vow-rank-col">
+          <h3>社区口碑榜</h3>
+          <ol>
+            <li><i>1</i><span>山线之上<em>好评率 97.8%</em></span></li>
+            <li><i>2</i><span>创作者访谈：长期作品<em>好评率 96.4%</em></span></li>
+            <li><i>3</i><span>在手作间里待一下午<em>好评率 95.9%</em></span></li>
+            <li><i>4</i><span>三种开头三秒法则<em>好评率 94.7%</em></span></li>
+            <li><i>5</i><span>胶片柜的第三卷<em>好评率 94.1%</em></span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 社区口碑 -->
+  <section class="vow-section vow-anchor" id="vow-community">
+    <div class="vow-wrap">
+      <div class="vow-section-head">
+        <span class="vow-kicker">Voices · 社区口碑</span>
+        <h2>观众怎么评价视频在线观看：真实、具体、允许不同意见</h2>
+        <p>以下评价来自社区公开留言的整理与引用，保留原意，仅做轻微标点整理。</p>
+      </div>
+      <div class="vow-comments">
+        <article class="vow-comment">
+          <div class="vow-comment-head">
+            <div class="vow-avatar-sm" style="background:linear-gradient(135deg,#56e0c8,#3f8f7c)" aria-hidden="true">林</div>
+            <b>林间有风</b><span>2 小时前</span>
+          </div>
+          <div class="vow-stars" aria-label="评分 5 分">★★★★★</div>
+          <p>第一次在视频在线观看看到把环境声讲得这么细的片子，01:47 那段地铁进站的声音我反复听了三遍。评论区还有人贴了录音设备型号，太实用了。</p>
+        </article>
+        <article class="vow-comment">
+          <div class="vow-comment-head">
+            <div class="vow-avatar-sm" style="background:linear-gradient(135deg,#ffb45c,#ff8a5c)" aria-hidden="true">周</div>
+            <b>周末不加班</b><span>昨天</span>
+          </div>
+          <div class="vow-stars" aria-label="评分 4 分">★★★★☆</div>
+          <p>作为普通观众，我最喜欢的是没有乱七八糟的弹出广告，能安静看完一条十几分钟的视频。唯一的小建议是希望增加「按主题订阅」的功能，现在只能收藏单个作品。</p>
+        </article>
+        <article class="vow-comment">
+          <div class="vow-comment-head">
+            <div class="vow-avatar-sm" style="background:linear-gradient(135deg,#7c8cff,#b3bcff)" aria-hidden="true">阿</div>
+            <b>阿禾在种菜</b><span>昨天</span>
+          </div>
+          <div class="vow-stars" aria-label="评分 5 分">★★★★★</div>
+          <p>新人投稿的体验比想象中顺畅，审核反馈会具体指出问题，而不是一句「不符合要求」。我第一次投稿被退回，第二次改完就通过了，感谢认真回复的编辑。</p>
+        </article>
+        <article class="vow-comment">
+          <div class="vow-comment-head">
+            <div class="vow-avatar-sm" style="background:linear-gradient(135deg,#b3bcff,#56e0c8)" aria-hidden="true">理</div>
+            <b>理性观看者</b><span>3 天前</span>
+          </div>
+          <div class="vow-stars" aria-label="评分 4 分">★★★★☆</div>
+          <p>内容质量整体不错，但个别科普视频的引用出处不够完整。后来在评论区看到作者补充了链接，态度值得肯定。希望官网能把这部分做成固定的引用展示位。</p>
+        </article>
+        <article class="vow-comment">
+          <div class="vow-comment-head">
+            <div class="vow-avatar-sm" style="background:linear-gradient(135deg,#ff8a5c,#ffb45c)" aria-hidden="true">半</div>
+            <b>半格相机日记</b><span>3 天前</span>
+          </div>
+          <div class="vow-stars" aria-label="评分 5 分">★★★★★</div>
+          <p>因为参与了冬季企划，我的作品第一次被放到官网首页。虽然播放不算高，但收到的长评比过去一年都多，有人认真写了 600 字讨论我选的点位，太感动了。</p>
+        </article>
+        <article class="vow-comment">
+          <div class="vow-comment-head">
+            <div class="vow-avatar-sm" style="background:linear-gradient(135deg,#3f8f7c,#56e0c8)" aria-hidden="true">陈</div>
+            <b>陈老师讲物理</b><span>4 天前</span>
+          </div>
+          <div class="vow-stars" aria-label="评分 5 分">★★★★★</div>
+          <p>知识类视频最怕被打断，这里的播放器进度条不会突然变大，也不会自动连播下一个，这个细节让我愿意把课上的学生都推荐过来看。</p>
+        </article>
+        <article class="vow-comment">
+          <div class="vow-comment-head">
+            <div class="vow-avatar-sm" style="background:linear-gradient(135deg,#b3bcff,#7c8cff)" aria-hidden="true">夜</div>
+            <b>夜班公交观察</b><span>5 天前</span>
+          </div>
+          <div class="vow-stars" aria-label="评分 4 分">★★★★☆</div>
+          <p>专题策展的思路很对，把相似主题的片子放在一起看，比刷信息流舒服多了。如果能增加一个「按拍摄地点筛选」的入口，对做在地内容的人会更友好。</p>
+        </article>
+        <article class="vow-comment">
+          <div class="vow-comment-head">
+            <div class="vow-avatar-sm" style="background:linear-gradient(135deg,#ffb45c,#7c8cff)" aria-hidden="true">小</div>
+            <b>小城放映计划</b><span>6 天前</span>
+          </div>
+          <div class="vow-stars" aria-label="评分 5 分">★★★★★</div>
+          <p>从报名到上线大约三周，期间收到两次官方修改建议，都是针对画面稳定性的具体意见。这种反馈比单纯给流量更有价值，希望激励计划能一直做下去。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 & 合作 -->
+  <section class="vow-section vow-alt vow-anchor" id="vow-news">
+    <div class="vow-wrap">
+      <div class="vow-section-head">
+        <span class="vow-kicker">News · 企业动态</span>
+        <h2>视频在线观看官方发布与企业动态</h2>
+        <p>产品更新、运营公示与合作信息，统一在此发布，不接受任何非官方渠道的转述版本。</p>
+      </div>
+      <div class="vow-split">
+        <ul class="vow-news">
+          <li>
+            <time datetime="2026-11-20">2026-11-20 · 官方发布</time>
+            <b>冬季原创影像企划正式开启投稿</b>
+            <p>本次企划以「冷与暖」为主题，接受 3 至 15 分钟原创短片。投稿入口位于帮助中心上方，审核周期约 7 个工作日，入选作品将进入官网专题页展映。</p>
+          </li>
+          <li>
+            <time datetime="2026-11-18">2026-11-18 · 产品更新</time>
+            <b>高清播放器升级：多端观看进度同步</b>
+            <p>本次升级统一了桌面端与移动端的转码策略，减少拖动进度条后的等待时间，并新增字幕大小与行距的手动调节项。</p>
+          </li>
+          <li>
+            <time datetime="2026-11-15">2026-11-15 · 运营公示</time>
+            <b>创作者激励计划第 6 期名单公示</b>
+            <p>本期共 128 位创作者入选，公示期 7 天。如对结果有异议，可通过帮助中心提交复核申请，我们会在 3 个工作日内回复。</p>
+          </li>
+          <li>
+            <time datetime="2026-11-08">2026-11-08 · 合作信息</time>
+            <b>与三家影像机构达成内容共建合作</b>
+            <p>合作方向包括纪录短片联合出品、线下放映活动与创作者工作坊，首期共建内容预计于 12 月中旬在官网专题页上线。</p>
+          </li>
+        </ul>
+        <div>
+          <div style="background:var(--vow-panel);border:1px solid var(--vow-line);border-radius:var(--vow-radius);padding:22px">
+            <h3 style="font-size:16px;margin-bottom:6px">合作与共建伙伴</h3>
+            <p style="font-size:13px;color:var(--vow-muted);margin-bottom:16px">我们与重视内容品质的机构长期合作，共同推动影像创作的可及性。</p>
+            <div class="vow-partners">
+              <div class="vow-partner">光屿影像<small>纪录短片联合出品</small></div>
+              <div class="vow-partner">半山放映社<small>线下放映合作</small></div>
+              <div class="vow-partner">格物器材<small>拍摄设备支持</small></div>
+              <div class="vow-partner">城市文化馆<small>在地内容共建</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 帮助 FAQ + CTA -->
+  <section class="vow-section vow-anchor" id="vow-help">
+    <div class="vow-wrap">
+      <div class="vow-cta">
+        <div class="vow-cta-body">
+          <h2>把你的作品放进视频在线观看的官网专题</h2>
+          <p>无论你是第一次拍摄，还是已经更新了很久，只要作品完整、信息真实，都欢迎投稿。我们不承诺流量，但承诺每一条投稿都会被认真看完。</p>
+        </div>
+        <div class="vow-cta-actions">
+          <button class="vow-btn vow-btn-primary" type="button" data-vow-open="submit">立即投稿报名</button>
+          <button class="vow-btn vow-btn-ghost" type="button" data-vow-open="share">分享给朋友</button>
+        </div>
+      </div>
+
+      <div style="margin-top:44px" class="vow-split">
+        <div>
+          <h2 style="font-size:24px;margin-bottom:8px">常见问题：关于视频在线观看官网</h2>
+          <p style="font-size:14px;color:var(--vow-muted);margin-bottom:6px">以下问题按社区提问频率整理，若未解决你的疑问，可通过反馈入口告知我们。</p>
+          <div class="vow-faq">
+            <details open>
+              <summary>投稿需要满足哪些基本条件？</summary>
+              <p>作品需为本人原创或已取得完整授权，时长建议 3 至 30 分钟，分辨率不低于 1080p。请在上传时填写真实的作品简介与拍摄信息，便于编辑判断与后续策展。</p>
+            </details>
+            <details>
+              <summary>审核周期一般多久？被退回还能再提交吗？</summary>
+              <p>常规审核周期为 7 个工作日，专题征稿期间可能略有延长。被退回的作品会附带具体修改建议，修改后可再次提交，不限制次数。</p>
+            </details>
+            <details>
+              <summary>平台如何判断是否为原创内容？</summary>
+              <p>我们会结合上传记录、素材信息与人工复核进行判断，并保留创作者署名的完整链路。若发现搬运或未授权使用他人素材，作品将下架并记录在案。</p>
+            </details>
+            <details>
+              <summary>播放数据与收益如何结算？</summary>
+              <p>播放数据以平台公开口径为准，收益按月度结算，明细可在创作者后台查看。涉及专题约稿的部分，会在合作确认前明确说明结算方式。</p>
+            </details>
+            <details>
+              <summary>可以在官网下载视频吗？</summary>
+              <p>是否开放下载由创作者自行决定。标注「允许下载」的作品可在详情页获取文件，其余作品仅支持在线观看，请尊重作者的授权选择。</p>
+            </details>
+            <details>
+              <summary>如何参与官方专题或比赛？</summary>
+              <p>官方专题与比赛信息会在公告条与企业动态中发布，报名入口统一在专题页内。请以官方发布内容为准，不要轻信非官方渠道的报名链接。</p>
+            </details>
+            <details>
+              <summary>社区评论有什么规范？</summary>
+              <p>鼓励具体、有建设性的讨论，允许不同意见。涉及人身攻击、未经核实的指控或商业引流的评论会被折叠，严重违规将限制发言权限。</p>
+            </details>
+            <details>
+              <summary>遇到播放问题如何反馈？</summary>
+              <p>可通过页面右下角的反馈入口提交问题，请尽量说明设备型号、网络环境与具体时间点，便于技术团队定位。我们会在工作日内回复处理进度。</p>
+            </details>
+          </div>
+        </div>
+        <div>
+          <div style="background:var(--vow-panel);border:1px solid var(--vow-line);border-radius:var(--vow-radius);padding:22px">
+            <h3 style="font-size:16px;margin-bottom:12px">内容索引 · 快速进入</h3>
+            <ul class="vow-aside-list">
+              <li><b>焦点内容</b>本周官网精选与视频条目，适合首次访问的观众。</li>
+              <li><b>深度解读</b>平台方法论与行业观察，理解内容生态的底层逻辑。</li>
+              <li><b>专题企划</b>正在更新的官方策展项目，接受创作者投稿报名。</li>
+              <li><b>社区口碑</b>真实评价与讨论，包含不同角度的建议与批评。</li>
+            </ul>
+            <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
+              <button class="vow-btn vow-btn-ghost" type="button" data-vow-open="feedback" style="padding:9px 18px;font-size:13.5px">反馈问题</button>
+              <button class="vow-btn vow-btn-ghost" type="button" data-vow-open="submit" style="padding:9px 18px;font-size:13.5px">联系投稿</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="vow-footer">
+  <div class="vow-wrap">
+    <div class="vow-footer-grid">
+      <div class="vow-footer-brand">
+        <a class="vow-logo" href="#vow-hero">
+          <span class="vow-logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 6l10 6-10 6z" fill="#06121d"/></svg>
+          </span>
+          <span>视频在线观看<small>VIDEO ONLINE</small></span>
+        </a>
+        <p>视频在线观看官方网站，专注高清、原创、正版的视频内容生态，为创作者与企业提供值得信赖的影像社区。我们相信持续运营与真实表达的力量。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#vow-focus">焦点内容</a></li>
+          <li><a href="#vow-topics">专题企划</a></li>
+          <li><a href="#vow-ranks">数据榜单</a></li>
+          <li><a href="#vow-authors">创作者矩阵</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#vow-deep">品牌故事与解析</a></li>
+          <li><a href="#vow-news">企业动态</a></li>
+          <li><a href="#vow-community">社区口碑</a></li>
+          <li><a href="#vow-help">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与</h4>
+        <ul>
+          <li><a href="#vow-help">投稿报名</a></li>
+          <li><a href="#vow-help">合作咨询</a></li>
+          <li><a href="#vow-help">问题反馈</a></li>
+          <li><a href="#vow-hero">返回首页</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="vow-footer-bottom">
+      <span>© 2026 视频在线观看 官方网站 · 版权所有 · 持续运营中</span>
+      <span>品牌备案号：影备 2026-1122 号 · 内容合规与版权保护已开通</span>
+    </div>
+  </div>
+</footer>
+
+<button class="vow-top" type="button" id="vow-backtop" aria-label="回到顶部">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="vow-toast" id="vow-toast" role="status" aria-live="polite"></div>
+
+<div class="vow-modal-mask" id="vow-modal-mask" role="dialog" aria-modal="true" aria-labelledby="vow-modal-title">
+  <div class="vow-modal">
+    <button class="vow-modal-close" type="button" id="vow-modal-close" aria-label="关闭弹窗">×</button>
+    <div id="vow-modal-content"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 吸顶高度 -> 锚点偏移 */
+  var topbar = document.getElementById('vow-topbar');
+  function syncSticky(){
+    var h = topbar ? topbar.offsetHeight : 112;
+    document.documentElement.style.setProperty('--vow-sticky', h + 'px');
+  }
+  syncSticky();
+  window.addEventListener('resize', syncSticky);
+
+  /* Toast */
+  var toast = document.getElementById('vow-toast');
+  var toastTimer = null;
+  function showToast(msg){
+    if(!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('vow-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('vow-show'); }, 2200);
+  }
+
+  /* 移动端导航 */
+  var burger = document.getElementById('vow-burger');
+  var mobileNav = document.getElementById('vow-mobile-nav');
+  if(burger && mobileNav){
+    burger.addEventListener('click', function(){
+      var open = mobileNav.classList.toggle('vow-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if(open){ syncSticky(); }
+    });
+    mobileNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        mobileNav.classList.remove('vow-open');
+        burger.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* 搜索前端反馈 */
+  var input = document.getElementById('vow-search-input');
+  var hint = document.getElementById('vow-search-hint');
+  var sbtn = document.getElementById('vow-search-btn');
+  function doSearch(){
+    if(!input || !hint) return;
+    var q = input.value.trim();
+    hint.classList.add('vow-open');
+    if(!q){
+      hint.innerHTML = '试试搜索 <b>城市纪录</b>、<b>剪辑教程</b> 或 <b>创作者访谈</b>。';
+      return;
+    }
+    var pool = ['城市纪录','剪辑教程','创作者访谈','户外跟拍','手作 DIY','胶片美学','知识科普','专题企划','数据榜单','投稿报名'];
+    var hit = pool.filter(function(k){ return k.indexOf(q) !== -1 || q.indexOf(k) !== -1; });
+    if(hit.length){
+      hint.innerHTML = '找到与「<b>' + escapeHtml(q) + '</b>」相关：' + hit.slice(0,4).map(function(k){ return '<b>' + escapeHtml(k) + '</b>'; }).join('、') + '。可继续在页面中浏览相关板块。';
+    }else{
+      hint.innerHTML = '暂未匹配到「<b>' + escapeHtml(q) + '</b>」的直接结果，已为你保留关键词，可尝试更短的关键词或浏览焦点内容。';
+    }
+  }
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  if(input){
+    input.addEventListener('input', function(){
+      if(hint.classList.contains('vow-open')) doSearch();
+    });
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+    });
+    input.addEventListener('focus', doSearch);
+  }
+  if(sbtn) sbtn.addEventListener('click', doSearch);
+  document.addEventListener('click', function(e){
+    if(hint && !hint.contains(e.target) && e.target !== input && e.target !== sbtn && !(sbtn && sbtn.contains(e.target))){
+      hint.classList.remove('vow-open');
+    }
+  });
+
+  /* 点赞 / 收藏 */
+  function fmt(n){
+    if(n >= 10000) return (n/10000).toFixed(1).replace(/\.0$/,'') + '万';
+    return String(n);
+  }
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-vow-like]');
+    if(likeBtn){
+      var base = parseInt(likeBtn.getAttribute('data-vow-base'), 10) || 0;
+      var on = likeBtn.classList.toggle('vow-on');
+      var span = likeBtn.querySelector('span');
+      if(span) span.textContent = fmt(on ? base + 1 : base);
+      showToast(on ? '已点赞，感谢你的支持' : '已取消点赞');
+      return;
+    }
+    var favBtn = e.target.closest('[data-vow-fav]');
+    if(favBtn){
+      var onFav = favBtn.classList.toggle('vow-on');
+      favBtn.textContent = onFav ? '★ 已收藏' : '☆ 收藏';
+      showToast(onFav ? '已加入收藏，可在个人页查看' : '已取消收藏');
+      return;
+    }
+  });
+
+  /* 复制链接 */
+  document.addEventListener('click', function(e){
+    var copyBtn = e.target.closest('[data-vow-copy]');
+    if(!copyBtn) return;
+    var text = copyBtn.getAttribute('data-vow-copy') || document.title;
+    var ok = function(){
+      showToast('已复制：' + text.slice(0, 24) + (text.length > 24 ? '…' : ''));
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok).catch(function(){ fallbackCopy(text, ok); });
+    }else{
+      fallbackCopy(text, ok);
+    }
+  });
+  function fallbackCopy(text, cb){
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      cb();
+    }catch(err){
+      showToast('复制失败，请手动选择文本复制');
+    }
+  }
+
+  /* 弹窗 */
+  var mask = document.getElementById('vow-modal-mask');
+  var modalContent = document.getElementById('vow-modal-content');
+  var closeBtn = document.getElementById('vow-modal-close');
+  function openModal(html){
+    if(!mask || !modalContent) return;
+    modalContent.innerHTML = html;
+    mask.classList.add('vow-open');
+    document.body.style.overflow = 'hidden';
+    if(closeBtn) closeBtn.focus();
+  }
+  function closeModal(){
+    if(!mask) return;
+    mask.classList.remove('vow-open');
+    document.body.style.overflow = '';
+  }
+  if(closeBtn) closeBtn.addEventListener('click', closeModal);
+  if(mask){
+    mask.addEventListener('click', function(e){ if(e.target === mask) closeModal(); });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeModal(); }
+  });
+
+  function submitHTML(){
+    return '<h3 id="vow-modal-title">投稿报名 · 视频在线观看</h3>' +
+      '<p class="vow-modal-sub">填写后我们会在 7 个工作日内回复。请确保作品为本人原创或已取得完整授权。</p>' +
+      '<label for="vow-f-title">作品标题</label><input id="vow-f-title" type="text" placeholder="例如：把凌晨四点的城市剪辑成一条河">' +
+      '<label for="vow-f-author">作者昵称</label><input id="vow-f-author" type="text" placeholder="请输入你的创作者昵称">' +
+      '<label for="vow-f-link">作品链接或网盘地址</label><input id="vow-f-link" type="text" placeholder="请提供可观看的链接">' +
+      '<label for="vow-f-note">作品简介</label><textarea id="vow-f-note" placeholder="简述拍摄背景、时长与技术信息，便于编辑判断"></textarea>' +
+      '<button class="vow-btn vow-btn-primary" type="button" id="vow-submit-send" style="width:100%;justify-content:center">提交报名</button>';
+  }
+  function shareHTML(){
+    return '<h3 id="vow-modal-title">分享视频在线观看官网</h3>' +
+      '<p class="vow-modal-sub">把官网推荐给同样喜欢完整观看的朋友，或复制链接保存到你的收藏夹。</p>' +
+      '<div style="display:flex;flex-direction:column;gap:10px">' +
+      '<button class="vow-btn vow-btn-ghost" type="button" data-vow-copy="视频在线观看 官方网站 · 高清原创影像社区">复制官网链接</button>' +
+      '<button class="vow-btn vow-btn-ghost" type="button" id="vow-share-wechat">分享到微信</button>' +
+      '<button class="vow-btn vow-btn-ghost" type="button" id="vow-share-weibo">分享到微博</button>' +
+      '<button class="vow-btn vow-btn-ghost" type="button" id="vow-share-qq">分享到 QQ</button>' +
+      '</div>';
+  }
+  function feedbackHTML(){
+    return '<h3 id="vow-modal-title">反馈问题 · 视频在线观看</h3>' +
+      '<p class="vow-modal-sub">请尽量描述具体场景，例如播放异常的时间点、设备型号与网络环境，便于我们定位。</p>' +
+      '<label for="vow-fb-type">问题类型</label><input id="vow-fb-type" type="text" placeholder="播放 / 投稿 / 评论 / 其他">' +
+      '<label for="vow-fb-desc">具体描述</label><textarea id="vow-fb-desc" placeholder="例如：某条视频在 03:12 处卡顿，桌面端 Chrome 浏览器"></textarea>' +
+      '<button class="vow-btn vow-btn-primary" type="button" id="vow-feedback-send" style="width:100%;justify-content:center">提交反馈</button>';
+  }
+
+  document.addEventListener('click', function(e){
+    var openBtn = e.target.closest('[data-vow-open]');
+    if(openBtn){
+      var kind = openBtn.getAttribute('data-vow-open');
+      if(kind === 'submit') openModal(submitHTML());
+      else if(kind === 'share') openModal(shareHTML());
+      else if(kind === 'feedback') openModal(feedbackHTML());
+      return;
+    }
+    if(e.target.id === 'vow-submit-send'){
+      var t = document.getElementById('vow-f-title');
+      var a = document.getElementById('vow-f-author');
+      if(!t || !t.value.trim() || !a || !a.value.trim()){
+        showToast('请至少填写作品标题与作者昵称');
+        return;
+      }
+      closeModal();
+      showToast('报名已提交，我们将在 7 个工作日内回复');
+      return;
+    }
+    if(e.target.id === 'vow-feedback-send'){
+      closeModal();
+      showToast('反馈已收到，感谢你的帮助');
+      return;
+    }
+    if(e.target.id === 'vow-share-wechat'){ showToast('请打开微信扫码或粘贴链接分享'); }
+    if(e.target.id === 'vow-share-weibo'){ showToast('已生成微博分享文案，可粘贴发布'); }
+    if(e.target.id === 'vow-share-qq'){ showToast('已生成 QQ 分享文案，可粘贴发送'); }
+
+    var authorBtn = e.target.closest('[data-vow-author]');
+    if(authorBtn){
+      var parts = authorBtn.getAttribute('data-vow-author').split('|');
+      openModal(
+        '<h3 id="vow-modal-title">' + escapeHtml(parts[0]) + '</h3>' +
+        '<p class="vow-modal-sub">擅长领域：' + escapeHtml(parts[1]) + '</p>' +
+        '<div style="display:flex;gap:22px;margin-bottom:16px;font-size:13px;color:#93a1bd">' +
+        '<span>作品 <b style="color:#56e0c8">' + escapeHtml(parts[2]) + '</b></span>' +
+        '<span>粉丝 <b style="color:#56e0c8">' + escapeHtml(parts[3]) + '</b></span>' +
+        '</div>' +
+        '<p style="font-size:13.6px;line-height:1.85;color:#b6c2d8">' + escapeHtml(parts[4]) + '</p>' +
+        '<button class="vow-btn vow-btn-primary" type="button" style="margin-top:18px;width:100%;justify-content:center" onclick="return false" data-vow-copy="' + escapeHtml(parts[0]) + '">复制创作者主页链接</button>'
+      );
+    }
+  });
+
+  /* 回到顶部 */
+  var backtop = document.getElementById('vow-backtop');
+  function onScroll(){
+    if(!backtop) return;
+    if(window.scrollY > 520) backtop.classList.add('vow-show');
+    else backtop.classList.remove('vow-show');
+  }
+  if(backtop){
+    backtop.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* 数字滚动 */
+  var counters = document.querySelectorAll('[data-vow-count]');
+  var seen = new WeakSet();
+  function runCount(el){
+    if(seen.has(el)) return;
+    seen.add(el);
+    var target = parseInt(el.getAttribute('data-vow-count'), 10) || 0;
+    var isPercent = el.querySelector('em') !== null;
+    var start = null;
+    var dur = 1200;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var v = Math.round(target * eased);
+      var txt = v.toLocaleString('zh-CN');
+      if(isPercent){ el.innerHTML = txt + '<em>%</em>'; }
+      else { el.textContent = txt; }
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ runCount(en.target); io.unobserve(en.target); }
+      });
+    }, { threshold: .4 });
+    counters.forEach(function(c){ io.observe(c); });
+  }else{
+    counters.forEach(runCount);
+  }
+
+  /* 卡片悬停仅在精细指针设备增强 */
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    document.querySelectorAll('.vow-topic,.vow-focus-main,.vow-author').forEach(function(card){
+      card.addEventListener('mouseenter', function(){ card.style.willChange = 'transform'; });
+      card.addEventListener('mouseleave', function(){ card.style.willChange = ''; });
+    });
+  }
+})();
+</script>
+</body>
+                     </html>
